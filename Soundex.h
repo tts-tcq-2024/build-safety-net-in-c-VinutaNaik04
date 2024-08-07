@@ -19,7 +19,7 @@ char getSoundexCode(char c) {
         return '5';
      if(c=='R'||c=='r')
         return '6';
-    return '0'
+    return '0';
    /* switch (c) {
         case 'B': case 'F': case 'P': case 'V': return '1';
         case 'C': case 'G': case 'J': case 'K': case 'Q': case 'S': case 'X': case 'Z': return '2';

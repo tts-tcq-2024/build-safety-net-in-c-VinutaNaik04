@@ -12,7 +12,7 @@ char getSoundexCode(char c) {
     c = toupper(c);
     switch (c)
         {
-    case 'B:
+    case 'B':
     case 'F':
     case 'P':
     case 'V':

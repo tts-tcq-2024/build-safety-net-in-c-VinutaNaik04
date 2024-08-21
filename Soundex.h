@@ -6,7 +6,7 @@
 #include <string.h>
  #include <ctype.h>
 
-char value_check()
+
 
 char getSoundexCode(char c) {
     c = toupper(c);

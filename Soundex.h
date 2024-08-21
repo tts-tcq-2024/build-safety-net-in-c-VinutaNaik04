@@ -6,8 +6,6 @@
 #include <string.h>
  #include <ctype.h>
 
-
-
 char getSoundexCode(char c) {
     c = toupper(c);
     switch (c)
@@ -26,8 +24,7 @@ char getSoundexCode(char c) {
     case 'S':
     case 'X':
     case 'Z':
-        return '2';
-               
+        return '2';      
     case 'D':
     case 'T':
         return '3';
@@ -47,11 +44,13 @@ void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
-
+        char prevcode=getSoundexCode(name[0]);
+ 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[sIndex - 1]) {
+        if (code != '0' && code != prevcode) {
             soundex[sIndex++] = code;
+            prevcode=code;
         }
     }
 

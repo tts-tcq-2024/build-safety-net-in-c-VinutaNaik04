@@ -12,7 +12,7 @@ char getSoundexCode(char c) {
 '2','4','5','5','0','1','2','6','2','3',
 '0','1','0','2','0','2'};
 if (isalpha(c)){
- return codetable[c-'A'];
+ return chartable[c-'A'];
 }
  return '0';
 }

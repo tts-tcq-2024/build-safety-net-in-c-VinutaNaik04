@@ -8,35 +8,12 @@
 
 char getSoundexCode(char c) {
     c = toupper(c);
-    switch (c)
-        {
-    case 'B':
-    case 'F':
-    case 'P':
-    case 'V':
-        return '1';
-    case 'C':
-    case 'G':
-    case 'J':
-    case 'K':
-        
-    case 'Q':
-    case 'S':
-    case 'X':
-    case 'Z':
-        return '2';      
-    case 'D':
-    case 'T':
-        return '3';
-    case 'L':
-        return '4';
-    case 'M':
-    case 'N':
-        return '5';
-    case 'R':
-        return '6';
-        default :
-            return '0';
+    const char_1 []={'B','F','P','V'};
+    const char_2[]={'C','G','J','K','Q','S','X','Z'};
+    const char_3[]={ 'D','T'};
+    const char_4[]={'L'};
+    const char_5[]={'M','N'};
+    const char_6[]={'R'};
         }
 }
 

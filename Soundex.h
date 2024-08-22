@@ -14,7 +14,7 @@ char getSoundexCode(char c) {
     const char_4[]={'L'};
     const char_5[]={'M','N'};
     const char_6[]={'R'};
-        }
+
 }
 
 void generateSoundex(const char *name, char *soundex) {

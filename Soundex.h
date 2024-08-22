@@ -29,6 +29,7 @@ void updateSoundexArray(const char *name, int len, char *soundex)
         }
  
 }
+}
 void finalizeSoundex(char *soundex)
 {
  while (strlen(soundex)<4)
@@ -37,7 +38,8 @@ void finalizeSoundex(char *soundex)
   }
  soundex[4]='\0';
 }
-void generateSoundex(const char *name, char *soundex) {
+void generateSoundex(const char *name, char *soundex)
+{
     int len = strlen(name);
     soundex[0] = '\0';
   updateSoundexArray(name,len,soundex);

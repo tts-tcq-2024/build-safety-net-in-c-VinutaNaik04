@@ -16,26 +16,33 @@ if (isalpha(c)){
 }
  return '0';
 }
-
-void generateSoundex(const char *name, char *soundex) {
-    int len = strlen(name);
-    soundex[0] = toupper(name[0]);
-    int sIndex = 1;
+void updateSoundexArray(const char *name, int len, char *soundex)
+{
+        int sIndex = 1;
         char prevcode=getSoundexCode(name[0]);
- 
+        soundex[0]=toupper(name[0]);
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
         if (code != '0' && code != prevcode) {
             soundex[sIndex++] = code;
             prevcode=code;
         }
-    }
-
-    while (sIndex < 4) {
-        soundex[sIndex++] = '0';
-    }
-
-    soundex[4] = '\0';
+ 
 }
+void finalizeSoundex(char *soundex)
+{
+ while (strlen(soundex)<4)
+  {
+   soundex[strlen(soundex)]='0'
+  }
+ soundex[4]='\0';
+}
+void generateSoundex(const char *name, char *soundex) {
+    int len = strlen(name);
+    soundex[0] = '\0';
+  updateSoundexArray(name,len,soundex);
+  finalizeSoundex(soundex);
+}
+   
 
 #endif // SOUNDEX_H

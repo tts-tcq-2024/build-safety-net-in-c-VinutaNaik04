@@ -16,6 +16,13 @@ if (isalpha(c)){
 }
  return '0';
 }
+void Check_Soundex(char code,int sIndex, char prevcode
+{
+ if (code != '0' && code != prevcode) {
+            soundex[sIndex++] = code;
+            prevcode=code;
+        }
+}
 void updateSoundexArray(const char *name, int len, char *soundex)
 {
         int sIndex=1;
@@ -25,10 +32,7 @@ void updateSoundexArray(const char *name, int len, char *soundex)
   for (int i = 1; i < len && sIndex < 4; i++) 
     {
      char code =getSoundexCode(name[i]);
-        if (code != '0' && code != prevcode) {
-            soundex[sIndex++] = code;
-            prevcode=code;
-        }
+       Check_Soundex(code, sIndex, prevcode);
   soundex[sIndex]='\0';
 }
 }

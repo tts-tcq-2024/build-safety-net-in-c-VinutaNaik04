@@ -2,7 +2,7 @@
 #include "Soundex.h"
 TEST(SoundexTestsuite, BasicSoundexCode) {
     char soundex[5];
-    generateSoundex("AXXXX", soundex);
+    generateSoundex("A0V0", soundex);
     ASSERT_EQ(std::string(soundex), "A200");
 }
 

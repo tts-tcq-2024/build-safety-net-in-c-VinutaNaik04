@@ -3,7 +3,7 @@
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
   char soundex[5];
-  generateSoundex("AX", soundex);
+  generateSoundex("AXAAA", soundex);
   EXPECT_STREQ(soundex,"A200");
 }
 

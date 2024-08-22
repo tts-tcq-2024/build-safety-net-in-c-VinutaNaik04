@@ -18,11 +18,18 @@ if (isalpha(c)){
 }
 void updateSoundexArray(const char *name, int len, char *soundex)
 {
-        int sIndex = 1;
-        char prevcode=getSoundexCode(name[0]);
+        char codes[len];
+         sIndex=1;
+         codes[0]=getSoundexCode(name[0]);
         soundex[0]=toupper(name[0]);
-    for (int i = 1; i < len && sIndex < 4; i++) {
-        char code = getSoundexCode(name[i]);
+    for (int i = 1; i < len; i++) 
+    {
+        codes [i]= getSoundexCode(name[i]);
+    }
+   char prevcode =codes[0];
+  for (int i = 1; i < len && sIndex<4; i++) 
+    {
+     char code =codes[i];
         if (code != '0' && code != prevcode) {
             soundex[sIndex++] = code;
             prevcode=code;

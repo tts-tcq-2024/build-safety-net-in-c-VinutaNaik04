@@ -10,7 +10,7 @@ char getSoundexCode(char c) {
     c = toupper(c);
    static  const char chartable[]={'0','1','2','3','0','1','2','0','0','2',
 '2','4','5','5','0','1','2','6','2','3',
-'0','1','0','2','0','2'}
+'0','1','0','2','0','2'};
 if (isalpha(c)){
  return codetable[c-'A'];
 }

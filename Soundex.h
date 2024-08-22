@@ -34,7 +34,7 @@ void finalizeSoundex(char *soundex)
 {
  while (strlen(soundex)<4)
   {
-   soundex[strlen(soundex)]='0'
+   soundex[strlen(soundex)]='0';
   }
  soundex[4]='\0';
 }

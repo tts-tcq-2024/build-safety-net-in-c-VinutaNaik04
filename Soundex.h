@@ -6,15 +6,26 @@
 #include <string.h>
  #include <ctype.h>
 
+char getsoundexarray(const char char_array[], size, char c);
+char getsoundexarray(const char_array[], char c)
+{
+    for (int i=0;i<size; i++)
+     {
+      if (char_array[i]==c)
+       return char_array[size-1];
+      else 
+       return '0';
+     }
+}
 char getSoundexCode(char c) {
     c = toupper(c);
-    const char_1 []={'B','F','P','V'};
-    const char_2[]={'C','G','J','K','Q','S','X','Z'};
-    const char_3[]={ 'D','T'};
-    const char_4[]={'L'};
-    const char_5[]={'M','N'};
-    const char_6[]={'R'};
-
+    const char char_1[]={'B','F','P','V','1'};
+    const char char_2[]={'C','G','J','K','Q','S','X','Z','2'};
+    const  char char_3[]={ 'D','T','3'};
+    const char char_4[]={'L','4'};
+    const  char char_5[]={'M','N','5'};
+    const char char_6[]={'R','6'};
+    return getsoundexarray
 }
 
 void generateSoundex(const char *name, char *soundex) {

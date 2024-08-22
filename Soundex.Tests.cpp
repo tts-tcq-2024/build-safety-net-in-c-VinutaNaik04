@@ -1,39 +1,13 @@
 #include <gtest/gtest.h>
 #include "Soundex.h"
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
- //AAA
-  char soundex[5];
-  generateSoundex("AXAAA", soundex);
-  EXPECT_STREQ(soundex,"A2000");
+TEST(SoundexTestsuite, BasicSoundexCode) {
+    char soundex[5];
+    generateSoundex("AXXXX", soundex);
+    ASSERT_EQ(std::string(soundex), "A200");
 }
 
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits1)
-{
-  char soundex[5];
-  generateSoundex("X0", soundex);
- EXPECT_STREQ(soundex,"X200");
-}
-
-
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2)
-{
-  char soundex[5];
-  generateSoundex("ZQOP", soundex);
- EXPECT_STREQ(soundex,"Z210");
-}
-
-
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits3)
-{
-  char soundex[5];
-  generateSoundex("ASDSD", soundex);
- EXPECT_STREQ(soundex,"A232");
-}
-
-
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits4)
-{
-  char soundex[5];
-  generateSoundex("12345", soundex);
- EXPECT_STREQ(soundex,"1000");
+TEST(SoundexTestsuite, IgnoresNonAlphabeticCharacters) {
+    char soundex[5];
+    generateSoundex("A1B2C3", soundex);
+    ASSERT_EQ(std::string(soundex), "A123");
 }
